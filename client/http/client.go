@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	core "github.com/elliottech/lighter-go/client"
+	core "github.com/dmu1313/lighter-go/client"
 )
 
 var (
