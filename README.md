@@ -1,3 +1,17 @@
+# Notes specific to dmu1313/lighter-go (forked version of the upstream lighter-go module).
+
+This fork is not meant to be very different from the upstream repo. For that reason, it may be easier to just have 1 commit that I constantly keep rebasing on top of the main branch whenever new upstream changes are pulled. This way the history does not get too complicated. Then each time this fork pulls and rebases the custom changes, a new branch is created to track that a change has occurred. This is important for other git repos that may include this repo as a git submodule. By having different branches, it becomes easier to track which version of this repo is currently being used in outside repos.
+
+Still not sure if this is the approach I'd like to go with. Can still just merge in upstream changes and create new commits each time if that's easier.
+
+## Overall explanation of code
+
+- The `sharedlib/main.go` file is the entry point for building the shared library. It imports some other packages in the repo.
+- The `client/client.go` file holds some global state for tracking TxClient objects. TxClient objects are responsible for signing transactions. There is one for each API key index. Users of the module shouldn't have to worry about tracking TxClient objects thanks to it.
+- Since I am maintaing my own fork of the repo with personalized changes, I had to also change the module's name to use my Github username rather than Lighter's username. I also had to change imports in various places for this.
+- The majority of my code is in `txsigner/sign.go`. There is [txsigner/README.md](txsigner/README.md), which should give more details.
+
+
 # lighter-go
 
 This repository serves as the reference implementation of signing & hashing of Lighter transactions.

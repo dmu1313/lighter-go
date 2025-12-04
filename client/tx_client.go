@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/elliottech/lighter-go/signer"
-	"github.com/elliottech/lighter-go/types"
+	"github.com/dmu1313/lighter-go/signer"
+	"github.com/dmu1313/lighter-go/types"
 )
 
 var (
